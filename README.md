@@ -1,9 +1,9 @@
 DSA Sheet
 
-This DSA sheet is designed by Arsh Goyal and contains 280+ DSA questions. Arsh DSA sheet covers almost every concept of DSA which will help in understanding DSA concepts in depth. It will also help you to clear the interview rounds of DSA as these questions have been asked in most recent interviews of big tech companies. 
+This DSA sheet is designed by Arsh Goyal and contains 280+ DSA questions. DSA sheet covers almost every concept of DSA which will help in understanding DSA concepts in depth. It will also help you to clear the interview rounds of DSA as these questions have been asked in most recent interviews of big tech companies. 
 
-                                                             ---***----
-
+  /*  */
+    
 Question1 : FIND DUPLICATE NUMBER ?
 Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
 There is only one repeated number in nums, return this repeated number.
