@@ -200,3 +200,23 @@ public:
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+SOLUTION 9:
+
+BUY AND SELL STOCK (II) .
+
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int n=prices.size();
+        int total_profit=0;
+        if(n<=1){
+            return 0;
+        }
+        for(int i=1;i<n;i++){
+            if(prices[i] > prices[i-1]){
+                total_profit += prices[i] - prices[i-1];
+            }
+        }
+        return total_profit;
+    }
+};
