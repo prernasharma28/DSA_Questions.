@@ -574,3 +574,37 @@ public:
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+SOLUTION 24 : 
+
+CONVERT BINARY NUMBER IN LINKED LIST ELEMENT TO INTEGER . 
+
+class Solution {
+public:
+    ListNode *reverse(ListNode *head){
+        ListNode *prev=NULL;
+        ListNode *curr=head;
+        ListNode *next_node;
+        while(curr!=NULL){
+            next_node=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=next_node;
+        }
+        head=prev;
+        return head;
+    }
+    int getDecimalValue(ListNode* head) {
+        ListNode *temp=reverse(head);
+        int i=0,total=0;
+        while(temp!=NULL){
+            int x=temp->val;
+            total=total+pow(2,i)*x;
+            i++;
+            temp=temp->next;
+        }
+        return total;
+    }
+};
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
