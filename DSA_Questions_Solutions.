@@ -690,3 +690,51 @@ class Solution
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+SOLUTION 27 : 
+
+PALINDROME LINKED LIST . 
+
+class Solution {
+public:
+    
+    ListNode *middle(ListNode *head){      
+        ListNode *slow=head;
+        ListNode *fast=head->next;
+        while(fast!=NULL && fast->next!=NULL){
+            slow=slow->next;
+            fast=fast->next->next;
+        }
+        return slow;
+    }
+
+    ListNode *reverse(ListNode *head){
+        ListNode* curr=head;
+        ListNode *prev=NULL;
+        while(curr!=NULL){
+            ListNode *next_node=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=next_node;
+        }
+        return prev;
+    }
+
+    bool isPalindrome(ListNode* head) {
+        if(head==NULL)
+            return true;
+        ListNode *mid=middle(head);
+        ListNode *last=reverse(mid->next);
+        ListNode *curr=head;
+        while(last!=NULL){
+            if(last->val!=curr->val)
+                return false;
+            last=last->next;
+            curr=curr->next;
+            
+        }
+        return true;
+    }
+};
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
